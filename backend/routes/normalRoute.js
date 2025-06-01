@@ -5,5 +5,5 @@ import { login, logout } from "../controllers/NormalController.js";
 export const normalRoute = express.Router();
 
 
-defaultroute.post("/login", login);
-defaultroute.post("/logout", logout); 
+normalRoute.post("/login", login);
+normalRoute.post("/logout", logout); 
