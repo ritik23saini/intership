@@ -3,7 +3,7 @@ import express from 'express';
 import cors from "cors";
 import { connectDB } from "./utils/db.js";
 import { adminRoute } from './routes/adminRoute.js';
-import { normalRoute } from './routes/normalroute.js';
+import { normalRoute } from './routes/normalRoute.js';
 
 import path from "path";
 
