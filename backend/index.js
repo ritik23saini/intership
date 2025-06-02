@@ -12,17 +12,18 @@ const app = express();
 const __dirname = path.resolve();
 
 
+
+
+app.use(express.json());
+
+const Port = process.env.PORT;
+
 app.listen(Port, () => {
   connectDB();
   console.log(`Server started at: http://localhost:${Port}`);
 });
-
-app.use(express.json());
-
-const Port = process.env.PORT || 8000;
-
 app.use(cors({
-  origin: ["http://localhost:5173", "https://intership-co8t.onrender.com"],
+  origin: ["http://localhost:5173"],
   credentials: true,
 }));
 
