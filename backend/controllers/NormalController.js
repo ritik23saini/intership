@@ -1,11 +1,11 @@
-import Admin from "../model/adminmodel.js";
+import DAdmin from "../model/adminmodel.js";
 
 
 export const login = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const existingUser = await Admin.findOne({ name: username });
+    const existingUser = await DAdmin.findOne({  username });
     if (!existingUser) {
       return res.status(400).json({ message: "Invalid Credential" });
     }
@@ -17,7 +17,7 @@ export const login = async (req, res) => {
 
     res.status(200).json({
       id: existingUser._id,
-      username: existingUser.name,
+      username: existingUser.username,
       isAdmin: existingUser.isAdmin
     });
   } catch (error) {

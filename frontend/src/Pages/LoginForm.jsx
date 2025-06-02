@@ -25,8 +25,8 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
-      const res = await axios.post(`${import.meta.VITE_BASE_URL}/api/login` , form, {
+      console.log(import.meta.env.VITE_BASE_URL)
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/login`, form, {
         withCredentials: true,
       });
 

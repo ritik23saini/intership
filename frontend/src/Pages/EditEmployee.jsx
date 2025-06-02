@@ -130,7 +130,7 @@ const EditEmployee = () => {
             console.log(form)
             setIsSubmitting(true);
             const res = await axios.post(
-                ` ${import.meta.VITE_BASE_URL}/api/admin/editEmp/${id}`,
+                ` ${import.meta.env.VITE_BASE_URL}/api/admin/editEmp/${id}`,
                 formData,
                 { withCredentials: true }
             );

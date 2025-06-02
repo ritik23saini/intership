@@ -116,7 +116,7 @@ const EmployeeForm = () => {
             console.log(form)
             setIsSubmitting(true);
             const res = await axios.post(
-                `${import.meta.VITE_BASE_URL}/api/admin/createEmp}`,
+                `${import.meta.env.VITE_BASE_URL}/api/admin/createEmp}`,
                 formData,
                 { withCredentials: true }
             );

@@ -10,7 +10,7 @@ const EmployeeList = () => {
   useEffect(() => {
     const getEmployees = async () => {
       try {
-        const res = await axios.get(`${import.meta.VITE_BASE_URL}/api/admin/getAllEmp`);
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/admin/getAllEmp`);
         if (res.data) {
           console.log(res.data)
           setEmployees(res.data);
@@ -53,7 +53,7 @@ const EmployeeList = () => {
   const handleDelete = async (id) => {
     console.log(id)
     try {
-      const res = await axios.delete(`${import.meta.VITE_BASE_URL}/api/admin/deleteEmp/${id}`);
+      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/admin/deleteEmp/${id}`);
 
       if (res.data) {
 
