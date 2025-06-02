@@ -27,7 +27,9 @@ app.use(cors({
   credentials: true,
 }));
 
-
+app.use("/", (req, res) => {
+  res.send("Server ONline")
+})
 app.use("/api/admin", adminRoute);
 app.use("/api", normalRoute);
 
