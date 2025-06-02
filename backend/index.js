@@ -3,6 +3,7 @@ import express from 'express';
 import cors from "cors";
 import { adminRoute } from './routes/adminRoute.js';
 import { normalRoute } from './routes/normalRoute.js';
+import { connectDB } from './utils/db.js';
 
 dotenv.config();
 
