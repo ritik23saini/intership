@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
-import { createEmployee, deleteEmployee, editEmployee, getAllEmployee, } from "../controllers/employeeController.js";
-import { validateEditFile, validateFile } from "../middlewares/fileValidator.js";
+import { validateEditFile, validateFile } from "../middlewares/fileValidator.js"
+import { createEmployee, editEmployee, getAllEmployee,deleteEmployee } from "../controllers/employeeController.js"
 
 const upload = multer({ storage: multer.memoryStorage() });
 

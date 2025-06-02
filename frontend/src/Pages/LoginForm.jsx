@@ -16,14 +16,15 @@ const LoginForm = () => {
   }, [UserInfo, navigate]);
 
   const initialForm = {
-    username: "",
-    password: "",
+    username:"",
+    password:"",
   };
 
   const [form, setForm] = useState(initialForm);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(form)
     try {
       const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/login`, form, {
         withCredentials: true,

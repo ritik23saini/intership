@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DadminSchema = new mongoose.Schema(
+const adminSchema = new mongoose.Schema(
     {
         username: {
             type: String,
@@ -19,6 +19,6 @@ const DadminSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const DAdmin = mongoose.model("Admin", DadminSchema);
+const Admin = mongoose.model("Admin", adminSchema);
 
-export default DAdmin;
+export default Admin;
