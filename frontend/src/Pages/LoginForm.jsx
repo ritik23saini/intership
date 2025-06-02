@@ -8,13 +8,13 @@ const LoginForm = () => {
   const UserInfo = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null;
- 
+
   useEffect(() => {
     if (UserInfo) {
       navigate("/dashboard");
     }
   }, [UserInfo, navigate]);
- 
+
   const initialForm = {
     username: "",
     password: "",
@@ -26,13 +26,13 @@ const LoginForm = () => {
     e.preventDefault();
     try {
 
-      const res = await axios.post("http://localhost:8000/api/login", form, {
+      const res = await axios.post(`${import.meta.VITE_BASE_URL}/api/login` , form, {
         withCredentials: true,
       });
 
       localStorage.setItem("userInfo", JSON.stringify(res.data));
       setForm(initialForm);
-      navigate("/dashboard"); 
+      navigate("/dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Login failed");
     }
@@ -61,7 +61,7 @@ const LoginForm = () => {
             onChange={(e) =>
               setForm((prev) => ({ ...prev, password: e.target.value }))
             }
-            value={form.password} 
+            value={form.password}
           />
         </div>
         <button type="submit">Submit</button>

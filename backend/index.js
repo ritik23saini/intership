@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 const Port = process.env.PORT || 8000;
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://intership-co8t.onrender.com"],
   credentials: true,
 }));
 

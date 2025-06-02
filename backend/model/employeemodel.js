@@ -17,7 +17,7 @@ const employeeSchema = new Schema({
         required: true,
         unique: true
     },
-    mobile: String,
+    mobile: Number,
     designation: String,
     gender: String,
     courses: [String],

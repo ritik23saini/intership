@@ -11,7 +11,7 @@ const ProtectedRoute = () => {
   return (
     <>
       <Nav />
-      <Outlet /> 
+      <Outlet />
     </>
   );
 };

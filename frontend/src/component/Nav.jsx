@@ -9,7 +9,7 @@ const Nav = () => {
 
     const handlelogout = async () => {
         try {
-            await axios.post("http://localhost:8000/api/logout", { withCredentials: true });
+            await axios.post(`${import.meta.VITE_BASE_URL}/api/logout`, { withCredentials: true });
             localStorage.removeItem("userInfo");
             navigate("/login");
         } catch (error) {

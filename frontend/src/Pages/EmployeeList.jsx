@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,7 +10,7 @@ const EmployeeList = () => {
   useEffect(() => {
     const getEmployees = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/admin/getAllEmp");
+        const res = await axios.get(`${import.meta.VITE_BASE_URL}/api/admin/getAllEmp`);
         if (res.data) {
           console.log(res.data)
           setEmployees(res.data);
@@ -52,7 +53,7 @@ const EmployeeList = () => {
   const handleDelete = async (id) => {
     console.log(id)
     try {
-      const res = await axios.delete(`http://localhost:8000/api/admin/deleteEmp/${id}`);
+      const res = await axios.delete(`${import.meta.VITE_BASE_URL}/api/admin/deleteEmp/${id}`);
 
       if (res.data) {
 
@@ -82,7 +83,7 @@ const EmployeeList = () => {
   };
 
   const sortbyDate = () => {
-   
+
   }
   return (
     <div>
