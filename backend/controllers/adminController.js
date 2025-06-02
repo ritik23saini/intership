@@ -1,4 +1,6 @@
 
+import Admin from "../model/adminmodel.js";
+
 export const login = async (req, res) => {
   const { username, password } = req.body;
 
